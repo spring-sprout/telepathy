@@ -7,11 +7,11 @@ package chapter3;
  * Time: 오후 1:26
  * To change this template use File | Settings | File Templates.
  */
-public interface Sort<AnyType> {
+public interface Sort {
     /**
      * AnyType의 배열을 받아서 정렬.
+     *
      * @param input 정렬할 배열
-     * @return 정렬 결과
      */
-    public AnyType[] sort(AnyType[] input);
+    public void sort(int[] input);
 }
