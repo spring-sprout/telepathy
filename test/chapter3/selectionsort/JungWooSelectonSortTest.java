@@ -1,0 +1,31 @@
+package chapter3.selectionsort;
+
+import org.junit.Test;
+
+import java.util.Arrays;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: miracle
+ * Date: 12. 2. 16.
+ * Time: 오전 12:30
+ * To change this template use File | Settings | File Templates.
+ */
+public class JungWooSelectonSortTest {
+    private int[] input = new int[]{3, 2, 1, 5, 10, 2};
+    private int[] output = new int[]{1, 2, 2, 3, 5, 10};
+
+    @Test
+    public void sort() {
+        // Given
+        JungWooSelectionSort sort = new JungWooSelectionSort();
+        // When
+        sort.sort(input);
+
+        // Then
+        assertThat(Arrays.equals(input, output), is(true));
+    }
+}
