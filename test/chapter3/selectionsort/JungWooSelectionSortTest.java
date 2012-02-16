@@ -7,21 +7,16 @@ import java.util.Arrays;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by IntelliJ IDEA.
- * User: miracle
- * Date: 12. 2. 16.
- * Time: 오전 12:30
- * To change this template use File | Settings | File Templates.
- */
-public class JungWooSelectonSortTest {
+
+public class JungWooSelectionSortTest {
     private int[] input = new int[]{3, 2, 1, 5, 10, 2};
-    private int[] output = new int[]{1, 2, 2, 3, 5, 10};
+    private final int[] output = new int[]{1, 2, 2, 3, 5, 10};
 
     @Test
-    public void sort() {
+    public void testSort() throws Exception {
         // Given
         JungWooSelectionSort sort = new JungWooSelectionSort();
+
         // When
         sort.sort(input);
 
