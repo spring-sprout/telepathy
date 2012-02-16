@@ -3,14 +3,14 @@ package quize.number01;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class DaewonRankCalculatorTest {
+public class DaewonRankingServiceTest {
 
-	DaewonRankingCalculator rankingCalculator = new DaewonRankingCalculator();
+	DaewonRankingService rankingService = new DaewonRankingService();
 
 	@Test
 	public void testGetRanking() {
 		int[] scores = new int[] { 80, 80, 60, 100 };
-		int[] ranking = rankingCalculator.getRanking(scores);
+		int[] ranking = rankingService.rank(scores);
 
 		Assert.assertEquals(2, ranking[0]);
 		Assert.assertEquals(2, ranking[1]);
@@ -21,6 +21,6 @@ public class DaewonRankCalculatorTest {
 	@Test
 	public void testPringRanking() {
 		int[] scores = new int[] { 80, 80, 60, 100 };
-		rankingCalculator.printRanking(scores);
+		rankingService.printRanking(scores);
 	}
 }

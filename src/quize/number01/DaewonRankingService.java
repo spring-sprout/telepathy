@@ -1,8 +1,9 @@
 package quize.number01;
 
-public class DaewonRankingCalculator {
+public class DaewonRankingService implements RankingService {
 
-	public int[] getRanking(int[] scores) {
+	@Override
+	public int[] rank(int[] scores) {
 		int[] ranking = new int[scores.length];
 
 		for (int i = 0; i < scores.length; i++) {
@@ -19,7 +20,7 @@ public class DaewonRankingCalculator {
 	}
 
 	public void printRanking(int[] scores) {
-		int[] ranking = getRanking(scores);
+		int[] ranking = rank(scores);
 		for (int i = 0; i < scores.length; i++) {
 			System.out.printf("%d %d %d\n", i, scores[i], ranking[i]);
 		}
