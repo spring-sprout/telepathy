@@ -1,4 +1,4 @@
-package quiz;
+package quize.number01;
 
 public class DaewonRank {
 
