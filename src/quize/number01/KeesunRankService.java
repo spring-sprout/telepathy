@@ -19,7 +19,8 @@ public class KeesunRankService implements RankingService{
 			int num = scores[i];
 			int rank = 1;
 //			System.out.println("num: " + num);
-			for(int j = 1 ; j < num ; j++) {
+//			System.out.println("=========");
+			for(int j = veryBigArraySize ; j > num ; j--) {
 //				System.out.println("j: " + j);
 //				System.out.println("rankingIndex[j-1]: " + rankingIndex[j-1]);
 				rank += rankingIndex[j-1]/j;
