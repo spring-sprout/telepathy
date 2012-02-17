@@ -1,4 +1,4 @@
-package chapter3.selectionSort;
+package chapter3.selectionsort;
 
 /**
  * @author JaeGyu

@@ -1,3 +1,5 @@
+package quize.number01;
+
 public class JeahoTestService {
 	public static void main(String[] args){
 		int[] a = {80, 80, 60, 100};
