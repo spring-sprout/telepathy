@@ -12,6 +12,9 @@ public class KeesunRankService implements RankingService{
 		int[] rankings = new int[scores.length];
 
 		for(int i = 0 ; i < scores.length ; i++) {
+                            //제가 입력값 조건을 잘못 알고있는지 
+                           //이 부분에서 만약 점수가 0점이 들어온다면.. ?
+                           //-1이 되며로 에러가 날것 같습니다.
 			rankingIndex[scores[i]-1] += scores[i];
 		}
 
