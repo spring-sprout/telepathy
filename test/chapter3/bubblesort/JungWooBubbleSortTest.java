@@ -19,7 +19,7 @@ public class JungWooBubbleSortTest extends BaseSortTest{
         sort.sort(정렬되지않은_배열);
 
         // Then
-        assertArrayEquals(정렬되지않은_배열, 정렬_결과);
+        assertArrayEquals(정렬되지않은_배열, expectedSortedArray);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class JungWooBubbleSortTest extends BaseSortTest{
         sort.sort(역정렬된_배열);
 
         // Then
-        assertArrayEquals(역정렬된_배열, 정렬_결과);
+        assertArrayEquals(역정렬된_배열, expectedSortedArray);
     }
 
     @Test
@@ -43,6 +43,6 @@ public class JungWooBubbleSortTest extends BaseSortTest{
         sort.sort(정렬된_배열);
 
         // Then
-        assertArrayEquals(정렬된_배열, 정렬_결과);
+        assertArrayEquals(정렬된_배열, expectedSortedArray);
     }
 }
