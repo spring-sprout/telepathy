@@ -1,4 +1,4 @@
-package chapter3.selectionsort;
+package chapter3.bubblesort;
 
 import static org.unitils.reflectionassert.ReflectionAssert.assertReflectionEquals;
 
@@ -6,9 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.unitils.reflectionassert.ReflectionComparatorMode;
 
-import chapter3.selectionsort.HanwooSelectionSort;
-
-public class HanwooSelectionSortTest {
+public class HanwooBubbleSortTest {
 
 	int[] input;
 	int[] output;
@@ -21,9 +19,10 @@ public class HanwooSelectionSortTest {
 
 	@Test
 	public void test() {
-		HanwooSelectionSort selectionSort = new HanwooSelectionSort();
+		HanwooBubbleSort bubbleSort = new HanwooBubbleSort();
 		assertReflectionEquals("배열 비교전 데이터 일치 여부", input, output, ReflectionComparatorMode.LENIENT_ORDER);
-		int[] sort = selectionSort.sort(input);
+		int[] sort = bubbleSort.sort(input);
+
 		assertReflectionEquals("배열 비교", sort, output);
 	}
 
