@@ -5,19 +5,19 @@ public class ILhyunRankService implements RankingService {
 
 	@Override
 	public int[] rank(int[] scores) {
-		int startIndex = maxIndex-1;
+		int startIndex = maxIndex;
 		int lastIndex = 0;
 		int size = scores.length;
 
-		int[] tempScore = new int[maxIndex];
+		int[] tempScore = new int[maxIndex+1];
 		int[] ranks = new int[size];
 		
 		for(int loop=0; loop < size; loop++){
-			tempScore[scores[loop]-1] = 1;
+			tempScore[scores[loop]] = 1;
 		}
 		
 		for(int loop=0; loop < size; loop++){
-			lastIndex = scores[loop]-1;
+			lastIndex = scores[loop];
 			
 			int rank = 1;
 			

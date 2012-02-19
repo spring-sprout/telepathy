@@ -40,4 +40,17 @@ public class ILhyunRankServiceTest {
 			assertThat(rank[loop], is(output[loop]));
 		}
 	}
+
+	@Test
+	public void zeroTest() throws Exception {
+		int[] input  = new int[]{100, 0, 100, 0, 0, 100};
+		int[] output = new int[]{1, 2, 1, 2, 2, 1};
+		
+		int[] rank = rankingService.rank(input);
+		
+		int size = rank.length;
+		for(int loop = 0; loop < size; loop++){
+			assertThat(rank[loop], is(output[loop]));
+		}
+	}
 }
