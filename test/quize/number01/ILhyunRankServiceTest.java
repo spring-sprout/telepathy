@@ -6,6 +6,9 @@ import static org.hamcrest.CoreMatchers.*;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author ihseo
+ */
 public class ILhyunRankServiceTest {
 
 	private RankingService rankingService;

@@ -1,5 +1,8 @@
 package quize.number01;
 
+/**
+ * @author ihseo
+ */
 public class ILhyunRankService implements RankingService {
 	private int maxIndex = 100;
 
