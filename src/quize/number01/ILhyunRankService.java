@@ -8,8 +8,6 @@ public class ILhyunRankService implements RankingService {
 
 	@Override
 	public int[] rank(int[] scores) {
-		int startIndex = maxIndex;
-		int lastIndex = 0;
 		int size = scores.length;
 
 		int[] tempScore = new int[maxIndex+1];
@@ -19,15 +17,15 @@ public class ILhyunRankService implements RankingService {
 			tempScore[scores[loop]] = 1;
 		}
 		
-		for(int loop=0; loop < size; loop++){
-			lastIndex = scores[loop];
-			
-			int rank = 1;
-			
-			for(int inLoop = startIndex; inLoop > lastIndex; inLoop--){
-				rank += tempScore[inLoop];
-			}
-			ranks[loop] = rank;
+		int rank = 0;
+		for(int loop=maxIndex; loop >= 0; loop--){
+			rank += tempScore[loop];
+//			System.out.println(loop + " : " + rank);
+			tempScore[loop] = rank;
+		}
+		
+		for(int loop = 0; loop < size; loop++){
+			ranks[loop] = tempScore[scores[loop]];
 		}
 		
 		return ranks;
