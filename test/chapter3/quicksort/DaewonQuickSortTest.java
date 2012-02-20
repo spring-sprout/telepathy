@@ -45,7 +45,7 @@ public class DaewonQuickSortTest {
 
 	private void assertSortedArray(int[] arr) {
 		for (int i = 0; i < (arr.length - 1); i++) {
-			Assert.assertTrue(arr[i] < arr[i + 1]);
+			Assert.assertTrue(arr[i] <= arr[i + 1]);
 		}
 	}
 }

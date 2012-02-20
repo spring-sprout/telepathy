@@ -38,7 +38,7 @@ public class DaewonSelectionSortTest {
 	private void assertSortedArray(int[] arr) {
 		for(int i = 0; i < (arr.length - 1); i++) {
 			System.out.printf("%d ", arr[i]);
-			Assert.assertTrue(arr[i] < arr[i+1]);
+			Assert.assertTrue(arr[i] <= arr[i + 1]);
 		}
 		System.out.println(arr[arr.length -1]);
 	}
