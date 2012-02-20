@@ -1,6 +1,9 @@
+# 인텔리J 프로젝트 파일 제외
 .idea/
 *.iml
+# 메이븐 빌드 디렉토리 제외
 target/
+# 이클립스 프로젝트 파일 제외
 .project
-/.settings
-/.classpath
+.settings/
+.classpath

@@ -10,7 +10,7 @@ public class JungWooInsertSort implements Sort{
             int j = i-1;
             int key = input[j+1];
             // i 부터 0까지 j+1보다 j가 크면 스왑. j+1은 i이고,
-            // 항상 고정 값이므로 input[i]로 교체 가능
+            // 비교할 대상은 고정 따라서 while문이 돌기전의 input[j+1]의 값으로 교체 가능
             while (j >= 0 && key < input[j]) {
                 int tmp = input[j];
                 input[j] = input[j +1];
