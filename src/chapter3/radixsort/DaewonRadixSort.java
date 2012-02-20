@@ -29,13 +29,13 @@ public class DaewonRadixSort implements Sort {
 		for (int digit = 1; digit <= numOfDigit; digit++) {
 			for (int j = 0; j < input.length; j++) {
 				int inputValue = input[j];
-				int digitValue = getDigitValue(inputValue, numOfDigit, digit);
+				int digitValue = getDigitValue(inputValue, digit);
 				System.out.printf("Idx:%d, InputValue:%d, Digit:%d, DigitValue:%d\n", j, inputValue, digit, digitValue);
 				radixStore.get(digitValue).add(inputValue);
 			}
 
 			int idx = 0;
-			for(int i = 0; i < radixStore.size(); i++) {
+			for (int i = 0; i < radixStore.size(); i++) {
 				List<Integer> values = radixStore.get(i);
 				for (Integer value : values) {
 					System.out.printf("Idx:%d, Value:%d \n", idx, value);
@@ -46,8 +46,8 @@ public class DaewonRadixSort implements Sort {
 		}
 	}
 
-	private int getDigitValue(int value, int digit, int i) {
-		return (int)((value % Math.pow(10, i)) / Math.pow(10, i - 1));
+	private int getDigitValue(int value, int digit) {
+		return (int)((value % Math.pow(10, digit)) / Math.pow(10, digit - 1));
 	}
 
 	private int getMaxValue(int[] input) {
