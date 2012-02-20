@@ -13,10 +13,10 @@ public class DaewonSelectionSort implements Sort {
 		}
 	}
 
-	private void swap(int[] input, int lastIdx, int idxOfMax) {
-		int largestVal = input[idxOfMax];
-		input[idxOfMax] = input[lastIdx];
-		input[lastIdx] = largestVal;
+	private void swap(int[] input, int idx1, int idx2) {
+		int temp = input[idx2];
+		input[idx2] = input[idx1];
+		input[idx1] = temp;
 	}
 
 	private int indexOfMaxValue(int[] input, int lastIdx) {
