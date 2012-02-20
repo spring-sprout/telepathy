@@ -5,10 +5,10 @@ public class HanwooSelectionSort implements SelectionSort {
 	@Override
 	public int[] sort(int[] input) {
 
+		int maxKey;
 		int maxValue;
 		int lastKey;
 		int lastValue;
-		int maxKey;
 
 		for(int i = input.length-1; i > 0; i--) {
 			maxKey = i;
