@@ -1,9 +1,10 @@
 package chapter3.selectionsort;
 
+import chapter3.Sort;
+
 /**
  * @author Keesun Baik
  */
-public interface SelectionSort {
+public interface SelectionSort extends Sort {
 
-	int[] sort(int[] input);
 }
