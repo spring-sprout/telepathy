@@ -8,12 +8,18 @@ public class WonChulSelectionSort implements SelectionSort {
 	
 	@Override
 	public int[] sort(int[] input) {
-		for(int i = input.length; i > 0 ; i--){
-			//for(int j = 0; j )
+		int temp;
+		
+		for(int i = 0 ; i < input.length; i++){
+			temp = input[i];
+			for(int j = 0; j < input.length; j++) {
+				if(temp < input[j])
+					temp = input[j];
+			}
+			input[(input.length-1)] = temp; 
 		}
+		return input;
 		
-		
-		return null;
 	}
 
 }
