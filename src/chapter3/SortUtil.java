@@ -1,5 +1,6 @@
 package chapter3;
 
+
 public class SortUtil {
 
 	public static void swap(int[] input, int firstIndex, int secondIndex) {
@@ -17,7 +18,19 @@ public class SortUtil {
 		input[secondIndex] = tempValue;
 		
 	}
-
+	
+	public static void reverse(int[] input){
+		int[] reverseArray = new int[input.length];
+		int k = 0;
+		for(int i = input.length - 1; i > -1; i--){
+			reverseArray[k++] = input[i];
+		}
+		
+		for(int i = 0 ; i < input.length; i++){
+			input[i] = reverseArray[i];
+		}
+		
+	}
 	public static void valid(int[] input) {
 		if( input == null || input.length == 0 ){
 			throw new IllegalArgumentException("올바른 정렬대상이 아닙니다.");

@@ -60,4 +60,12 @@ public class SortUtilTest {
 			fail();
 		}catch(IllegalArgumentException ex){}
 	}
+	
+	@Test
+	public void testReverse(){
+		int[] actualIntArray = {1, 2, 3, 4, 5};
+		int[] expectedIntArray = {5, 4, 3, 2, 1};
+		SortUtil.reverse(actualIntArray);
+		assertArrayEquals(expectedIntArray, actualIntArray);
+	}
 }
