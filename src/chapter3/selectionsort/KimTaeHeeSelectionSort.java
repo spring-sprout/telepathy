@@ -1,20 +1,20 @@
 package chapter3.selectionsort;
 
+import chapter3.SortUtil;
+
 
 public class KimTaeHeeSelectionSort implements SelectionSort{
 
 	@Override
 	public int[] sort(int[] input) {
-		if( input.length == 0 ){
-			throw new IllegalArgumentException("정렬 대상 배열의 갯수가 0입니다");
-		}
+		SortUtil.valid(input);
 		int lastIndex = input.length - 1;
 		while( lastIndex > 0 ){
 			
 			int maxValueIndex = getMaxValueIndex(input, lastIndex);			
 			
 			// swap
-			swap(input, maxValueIndex, lastIndex);
+			SortUtil.swap(input, maxValueIndex, lastIndex);
 			
 			lastIndex--;
 		}
@@ -32,12 +32,5 @@ public class KimTaeHeeSelectionSort implements SelectionSort{
 			}
 		}
 		return maxValueIndex;
-	}
-	private void swap(int[] input, int firstIndex, int secondIndex){
-		if( firstIndex != secondIndex ){
-			int tempValue = input[secondIndex];
-			input[secondIndex] = input[firstIndex];
-			input[firstIndex] = tempValue;
-		}
 	}
 }
