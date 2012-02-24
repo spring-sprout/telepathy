@@ -13,13 +13,13 @@ public class KimTaeHeeRadixSort implements Sort{
 		int maxCipher = getMaxNumberLength(input);
 		
 		for(int i = 1; i <= maxCipher; i++){
-			System.out.println(i + "번째 자릿수 기수 정렬");
+			//System.out.println(i + "번째 자릿수 기수 정렬");
 			radixSort(stringNumberList, i);
-			System.out.println(i + "번째 자릿수 기수 정렬 후 " + stringNumberList.size());			
-			for(String s : stringNumberList){
+		//	System.out.println(i + "번째 자릿수 기수 정렬 후 " + stringNumberList.size());			
+		/*	for(String s : stringNumberList){
 				System.out.print(s + " ");
 			}
-			System.out.println("");
+			System.out.println("");*/
 		}
 		
 		for(int i = 0; i < stringNumberList.size(); i++){
@@ -61,7 +61,7 @@ public class KimTaeHeeRadixSort implements Sort{
 		for(String stringNumber : tempList){
 			stringNumberList.add(stringNumber);
 		}
-		System.out.println("stringNumberList size : " + stringNumberList.size());
+		//System.out.println("stringNumberList size : " + stringNumberList.size());
 		
 		
 	}
@@ -85,10 +85,10 @@ public class KimTaeHeeRadixSort implements Sort{
 				stringNumberList.set(i, stringNumber);
 			}
 		}
-		
+		/*
 		for(String s : stringNumberList){
 			System.out.print(s + " ");
-		}
+		}*/
 		return stringNumberList;
 	}
 }
