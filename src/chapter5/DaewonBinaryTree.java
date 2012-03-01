@@ -53,6 +53,7 @@ public class DaewonBinaryTree {
 
 		} else if (node.equals(parentNode.getLeft())) {
 			parentNode.setLeft(deleteNode(node));
+
 		} else {
 			parentNode.setRight(deleteNode(node));
 		}
@@ -139,6 +140,17 @@ public class DaewonBinaryTree {
 			if (this.right != null) {
 				this.right.parent = this;
 			}
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			boolean result = false;
+			if (obj instanceof TreeNode) {
+				TreeNode that = (TreeNode)obj;
+				result = (this.key == that.key);
+			}
+
+			return result;
 		}
 
 	}
