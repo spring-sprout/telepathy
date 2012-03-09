@@ -1,7 +1,5 @@
 package chapter4.binarysearchtree;
 
-import chapter4.Node;
-
 /**
  * @author ihseo
  * 이진검색트리
