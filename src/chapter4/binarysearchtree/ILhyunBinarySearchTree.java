@@ -1,4 +1,6 @@
-package chapter4;
+package chapter4.binarysearchtree;
+
+import chapter4.Node;
 
 /**
  * @author ihseo
