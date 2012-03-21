@@ -6,6 +6,8 @@ import chapter3.Sort;
  * @author kimddochi
  *
  */
-public interface BubbleSort extends Sort {
+public interface BubbleSort {
+
+	public int[] sort(int[] input);
 
 }

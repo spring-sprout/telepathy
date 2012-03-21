@@ -5,6 +5,8 @@ import chapter3.Sort;
 /**
  * @author Keesun Baik
  */
-public interface SelectionSort extends Sort {
+public interface SelectionSort {
+
+	public int[] sort(int[] input);
 
 }
