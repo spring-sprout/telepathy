@@ -1,10 +1,13 @@
 package chapter3.bubblesort;
 
+import chapter3.Sort;
+
 /**
  * @author kimddochi
  *
  */
 public interface BubbleSort {
 
-	int[] sort(int[] input);
+	public int[] sort(int[] input);
+
 }
