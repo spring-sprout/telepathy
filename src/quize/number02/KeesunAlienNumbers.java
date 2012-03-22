@@ -13,35 +13,34 @@ import static org.junit.Assert.assertThat;
 public class KeesunAlienNumbers {
 
 	public String alienize(String alienNum, String sourceSystem, String targetSystem){
-		String sourceLang = sourceSystem;
-		char[] source = sourceLang.toCharArray();
+		char[] source = sourceSystem.toCharArray();
 		int sourceLength = source.length;
+		int numberLength = alienNum.length();
 
-		String input = alienNum;
-		int inputLength = input.length();
-
-		int result = 0;
+		// source 진수를 10 진수로 변환
+		int tenDigitNumber = 0;
 		int index = 1;
-		for(Character num : input.toCharArray()) {
+		for(Character num : alienNum.toCharArray()) {
 			int digit = indexOf(num, source);
 			int zeros = 1;
-			for(int j = 0 ; j < inputLength - index ; j++) {
+			for(int j = 0 ; j < numberLength - index ; j++) {
 				zeros *= sourceLength;
 			}
 			index++;
-			result += digit * zeros;
+			tenDigitNumber += digit * zeros;
 		}
 
+		// 10진수를 target 진수로 변환
 		char[] target = targetSystem.toCharArray();
 		int targetLength = target.length;
 		List<Character> resultString = new ArrayList<Character>();
-		while (result/targetLength > targetLength - 1) {
-			resultString.add(0, target[result%targetLength]);
-			result /= targetLength;
+		while (tenDigitNumber/targetLength > targetLength - 1) {
+			resultString.add(0, target[tenDigitNumber%targetLength]);
+			tenDigitNumber /= targetLength;
 		}
-		resultString.add(0, target[result%targetLength]);
-		if(result/targetLength != 0) {
-			resultString.add(0, target[result/targetLength]);
+		resultString.add(0, target[tenDigitNumber%targetLength]);
+		if(tenDigitNumber/targetLength != 0) {
+			resultString.add(0, target[tenDigitNumber/targetLength]);
 		}
 
 		String resultLang = "";
