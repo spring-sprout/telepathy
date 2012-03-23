@@ -2,24 +2,24 @@ package chapter5;
 
 public class DaewonBinaryTree {
 
-	private TreeNode root;
+	private Node root;
 
-	public TreeNode getRoot() {
+	public Node getRoot() {
 		return root;
 	}
 
-	public TreeNode search(int key) {
+	public Node search(int key) {
 		return search(root, key);
 	}
 
-	private TreeNode search(TreeNode node, int key) {
-		if (node == null || node.getKey() == key)
-			return node;
+	private Node search(Node parentNode, int key) {
+		if (parentNode == null || parentNode.getKey() == key)
+			return parentNode;
 
-		if (key < node.getKey()) {
-			return search(node.getLeft(), key);
+		if (key < parentNode.getKey()) {
+			return search(parentNode.getLeft(), key);
 		} else {
-			return search(node.getRight(), key);
+			return search(parentNode.getRight(), key);
 		}
 	}
 
@@ -27,26 +27,26 @@ public class DaewonBinaryTree {
 		root = insert(root, key);
 	}
 
-	private TreeNode insert(TreeNode node, int key) {
-		if (node == null) {
-			node = new TreeNode(key, null);
-			return node;
+	private Node insert(Node parentNode, int key) {
+		if (parentNode == null) {
+			Node newNode = new Node(key, null);
+			return newNode;
 		}
 
-		if (key < node.key) {
-			node.setLeft(insert(node.getLeft(), key));
-			return node;
+		if (key < parentNode.key) {
+			parentNode.setLeft(insert(parentNode.getLeft(), key));
 		} else {
-			node.setRight(insert(node.getRight(), key));
-			return node;
+			parentNode.setRight(insert(parentNode.getRight(), key));
 		}
+
+		return parentNode;
 	}
 
-	public void delete(TreeNode node) {
+	public void delete(Node node) {
 		if (node == null)
 			return;
 
-		TreeNode parentNode = node.getParent();
+		Node parentNode = node.getParent();
 
 		if (node.equals(root)) {
 			deleteNode(root);
@@ -59,7 +59,7 @@ public class DaewonBinaryTree {
 		}
 	}
 
-	private TreeNode deleteNode(TreeNode node) {
+	private Node deleteNode(Node node) {
 		if (node.getLeft() == null && node.getRight() == null) {
 			return null;
 		} else if (node.getLeft() == null && node.getRight() != null) {
@@ -68,8 +68,8 @@ public class DaewonBinaryTree {
 			return node.getLeft();
 
 		} else {
-			TreeNode parentOfSwitchNode = null;
-			TreeNode switchNode = node.getRight();
+			Node parentOfSwitchNode = null;
+			Node switchNode = node.getRight();
 			while (switchNode.getLeft() != null) {
 				parentOfSwitchNode = switchNode;
 				switchNode = switchNode.getLeft();
@@ -83,21 +83,20 @@ public class DaewonBinaryTree {
 
 			return node;
 		}
-
 	}
 
-	public static class TreeNode {
+	public static class Node {
 
 		private int key;
-		private TreeNode parent;
-		private TreeNode left;
-		private TreeNode right;
+		private Node parent;
+		private Node left;
+		private Node right;
 
-		public TreeNode(int key, TreeNode parent) {
+		public Node(int key, Node parent) {
 			this(key, parent, null, null);
 		}
 
-		public TreeNode(int key, TreeNode parent, TreeNode left, TreeNode right) {
+		public Node(int key, Node parent, Node left, Node right) {
 			super();
 			this.key = key;
 			this.left = left;
@@ -112,30 +111,30 @@ public class DaewonBinaryTree {
 			this.key = key;
 		}
 
-		public TreeNode getParent() {
+		public Node getParent() {
 			return parent;
 		}
 
-		public void setParent(TreeNode parent) {
+		public void setParent(Node parent) {
 			this.parent = parent;
 		}
 
-		public TreeNode getLeft() {
+		public Node getLeft() {
 			return left;
 		}
 
-		public void setLeft(TreeNode left) {
+		public void setLeft(Node left) {
 			this.left = left;
 			if (this.left != null) {
 				this.left.parent = this;
 			}
 		}
 
-		public TreeNode getRight() {
+		public Node getRight() {
 			return right;
 		}
 
-		public void setRight(TreeNode right) {
+		public void setRight(Node right) {
 			this.right = right;
 			if (this.right != null) {
 				this.right.parent = this;

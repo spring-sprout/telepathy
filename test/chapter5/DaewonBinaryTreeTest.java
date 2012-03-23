@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import chapter5.DaewonBinaryTree.TreeNode;
+import chapter5.DaewonBinaryTree.Node;
 
 public class DaewonBinaryTreeTest {
 
@@ -30,7 +30,7 @@ public class DaewonBinaryTreeTest {
 		tree.insert(10);
 		tree.insert(35);
 
-		TreeNode root = tree.getRoot();
+		Node root = tree.getRoot();
 
 		Assert.assertEquals(root.getKey(), 30);
 		Assert.assertEquals(root.getLeft().getKey(), 20);
