@@ -13,10 +13,10 @@ public class JongheonSelectionSort implements SelectionSort {
 			int temp = input[largest];
 			input[largest] = input[last];
 			input[last] = temp;
-		}
+		} // for last
 		
 		return input;
-	}
+	} // sort()
 	
 	public int theLargest(int[] input, int last) {
 		int largest = 0;
@@ -24,9 +24,9 @@ public class JongheonSelectionSort implements SelectionSort {
 		for (int i = 1; i <= last; i++) {
 			if (input[i] > input[largest])
 				largest = i;
-		}
+		} // for i
 		
 		return largest;
-	}
+	} // theLargest()
 	
 }
