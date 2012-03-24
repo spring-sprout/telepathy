@@ -1,4 +1,4 @@
-package chapter4.binarysearchtree;
+package chapter5.binarysearchtree;
 
 /**
  * @author ihseo

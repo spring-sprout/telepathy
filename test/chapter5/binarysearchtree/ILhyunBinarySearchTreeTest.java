@@ -1,4 +1,4 @@
-package chapter4.binarysearchtree;
+package chapter5.binarysearchtree;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
